@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1088389644223",
+    "project_id": "instagram-clone-from-ihunwork",
+    "storage_bucket": "instagram-clone-from-ihunwork.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088389644223:android:c82d8246333a2a6b38eb0a",
+        "android_client_info": {
+          "package_name": "ihunwork.think.co.instagram_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1088389644223-5otr5cka24d7trru72fods78kqap8ivg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLDU2BMxW_JIyuV0Kna8eSi88mdswitU4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1088389644223-5otr5cka24d7trru72fods78kqap8ivg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

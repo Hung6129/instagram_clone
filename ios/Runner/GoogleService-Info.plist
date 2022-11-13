@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1088389644223-a7jok9tbiimlkfo2q3u1l678sobnr5m2.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1088389644223-a7jok9tbiimlkfo2q3u1l678sobnr5m2</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDgAMpptil5Pnv_Bl3DriXKMIRXYnBxU00</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1088389644223</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ihunwork.think.co.instagramClone</string>
+	<key>PROJECT_ID</key>
+	<string>instagram-clone-from-ihunwork</string>
+	<key>STORAGE_BUCKET</key>
+	<string>instagram-clone-from-ihunwork.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1088389644223:ios:8dc39498376797e138eb0a</string>
+</dict>
+</plist>
