@@ -1,13 +1,16 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:instagram_clone/state/auth/constants/constants.dart';
 
-import '../../posts/typedef/user_id.dart';
-import '../constants/constants.dart';
+import '../../posts/typedefs/user_id.dart';
 import '../models/auth_result.dart';
 
 class Authenticator {
   const Authenticator();
+
+  // getters
+
   bool get isAlreadyLoggedIn => userId != null;
   UserId? get userId => FirebaseAuth.instance.currentUser?.uid;
   String get displayName => FirebaseAuth.instance.currentUser?.displayName ?? '';
@@ -16,7 +19,7 @@ class Authenticator {
   Future<void> logOut() async {
     await FirebaseAuth.instance.signOut();
     await GoogleSignIn().signOut();
-    // await FacebookAuth.instance.logOut();
+    await FacebookAuth.instance.logOut();
   }
 
   Future<AuthResult> loginWithFacebook() async {

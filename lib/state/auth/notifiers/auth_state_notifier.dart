@@ -1,7 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../posts/typedef/user_id.dart';
-import '../../user_infor/back_end/user_infor_storage.dart';
+import '../../posts/typedefs/user_id.dart';
+import '../../user_info/backend/user_info_storage.dart';
 import '../backend/authenticator.dart';
 import '../models/auth_result.dart';
 import '../models/auth_state.dart';

@@ -3,8 +3,8 @@ import 'package:flutter/foundation.dart';
 
 import '../../constants/firebase_collection_name.dart';
 import '../../constants/firebase_field_name.dart';
-import '../../posts/typedef/user_id.dart';
-import '../models/user_infor_payload.dart';
+import '../../posts/typedefs/user_id.dart';
+import '../models/user_info_payload.dart';
 
 @immutable
 class UserInfoStorage {
@@ -38,8 +38,8 @@ class UserInfoStorage {
 
       final payload = UserInfoPayload(
         userId: userId,
+        displayName: displayName,
         email: email,
-        disPlayName: displayName,
       );
       await FirebaseFirestore.instance
           .collection(

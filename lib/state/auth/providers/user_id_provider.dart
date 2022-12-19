@@ -1,14 +1,15 @@
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:testingriverpod/state/auth/providers/auth_state_provider.dart';
+import 'package:testingriverpod/state/posts/typedefs/user_id.dart';
 
-import '../../posts/typedef/user_id.dart';
+import '../../posts/typedefs/user_id.dart';
 import 'auth_state_provider.dart';
 
-// UserId? userId(UserIdRef ref) => ref
-//     .watch(
-//       authStateProvider,
-//     )
-//     .userId;
+part 'user_id_provider.g.dart';
 
-final userIdProvider = Provider<UserId?>((ref) {
-  return ref.watch(authStateProvider).userId;
-});
+@riverpod
+UserId? userId(UserIdRef ref) => ref
+    .watch(
+      authStateProvider,
+    )
+    .userId;
