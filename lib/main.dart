@@ -6,7 +6,7 @@ import 'package:instagram_clone/views/components/animations/empty_contents_anima
 
 import 'firebase_options.dart';
 import 'state/auth/providers/is_logged_in_provider.dart';
-import 'state/provider/is_loading_provider.dart';
+import 'state/providers/is_loading_provider.dart';
 import 'views/components/loading/loading_screen.dart';
 import 'views/login/login_view.dart';
 
@@ -61,12 +61,12 @@ class App extends ConsumerWidget {
           if (isLoggedIn) {
             return Column(
               children: [
-                EmptyContentsAnimationView(),
+                const EmptyContentsAnimationView(),
                 TextButton(
                   onPressed: () async {
                     await ref.read(authStateProvider.notifier).logOut();
                   },
-                  child: Text("LogOut"),
+                  child: const Text("LogOut"),
                 ),
               ],
             );

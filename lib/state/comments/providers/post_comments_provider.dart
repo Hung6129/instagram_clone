@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:testingriverpod/state/comments/extensions/comment_sorting_by_request.dart';
-import 'package:testingriverpod/state/comments/models/comment.dart';
-import 'package:testingriverpod/state/comments/models/post_comments_request.dart';
-import 'package:testingriverpod/state/constants/firebase_collection_name.dart';
-import 'package:testingriverpod/state/constants/firebase_field_name.dart';
+import 'package:instagram_clone/state/comments/extensions/comment_sorting_by_request.dart';
+import 'package:instagram_clone/state/comments/models/comment.dart';
+import 'package:instagram_clone/state/comments/models/post_comments_request.dart';
+import 'package:instagram_clone/state/constants/firebase_collection_name.dart';
+import 'package:instagram_clone/state/constants/firebase_field_name.dart';
 
 final postCommentsProvider = StreamProvider.family
     .autoDispose<Iterable<Comment>, RequestForPostAndComments>((

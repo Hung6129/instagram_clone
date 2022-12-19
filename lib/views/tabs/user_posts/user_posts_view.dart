@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:instagram_clone/views/constants/strings.dart';
 
+import '../../../state/posts/providers/user_posts_provider.dart';
 import '../../components/animations/empty_contents_with_text_animation_view.dart';
 import '../../components/animations/error_animation_view.dart';
 import '../../components/animations/loading_animation_view.dart';

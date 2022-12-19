@@ -5,15 +5,15 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:image/image.dart' as img;
-import 'package:testingriverpod/state/constants/firebase_collection_name.dart';
-import 'package:testingriverpod/state/image_upload/constants/constants.dart';
-import 'package:testingriverpod/state/image_upload/exceptions/could_not_build_thumbnail_exception.dart';
-import 'package:testingriverpod/state/image_upload/extensions/get_collection_name_from_file_type.dart';
-import 'package:testingriverpod/state/image_upload/extensions/get_image_data_aspect_ratio.dart';
-import 'package:testingriverpod/state/image_upload/models/file_type.dart';
-import 'package:testingriverpod/state/image_upload/typedefs/is_loading.dart';
-import 'package:testingriverpod/state/post_settings/models/post_setting.dart';
-import 'package:testingriverpod/state/posts/models/post_payload.dart';
+import 'package:instagram_clone/state/constants/firebase_collection_name.dart';
+import 'package:instagram_clone/state/image_upload/constants/constants.dart';
+import 'package:instagram_clone/state/image_upload/exceptions/could_not_build_thumbnail_exception.dart';
+import 'package:instagram_clone/state/image_upload/extensions/get_collection_name_from_file_type.dart';
+import 'package:instagram_clone/state/image_upload/extensions/get_image_data_aspect_ratio.dart';
+import 'package:instagram_clone/state/image_upload/models/file_type.dart';
+import 'package:instagram_clone/state/image_upload/typedefs/is_loading.dart';
+import 'package:instagram_clone/state/post_settings/models/post_setting.dart';
+import 'package:instagram_clone/state/posts/models/post_payload.dart';
 import 'package:uuid/uuid.dart';
 import 'package:video_thumbnail/video_thumbnail.dart';
 
@@ -75,22 +75,13 @@ class ImageUploadNotifier extends StateNotifier<IsLoading> {
 
     // create references to the thumbnail and the image itself
 
-    final thumbnailRef = FirebaseStorage.instance
-        .ref()
-        .child(userId)
-        .child(FirebaseCollectionName.thumbnails)
-        .child(fileName);
+    final thumbnailRef = FirebaseStorage.instance.ref().child(userId).child(FirebaseCollectionName.thumbnails).child(fileName);
 
-    final originalFileRef = FirebaseStorage.instance
-        .ref()
-        .child(userId)
-        .child(fileType.collectionName)
-        .child(fileName);
+    final originalFileRef = FirebaseStorage.instance.ref().child(userId).child(fileType.collectionName).child(fileName);
 
     try {
       // upload the thumbnail
-      final thumbnailUploadTask =
-          await thumbnailRef.putData(thumbnailUint8List);
+      final thumbnailUploadTask = await thumbnailRef.putData(thumbnailUint8List);
       final thumbnailStorageId = thumbnailUploadTask.ref.name;
 
       // upload the original image
@@ -110,9 +101,7 @@ class ImageUploadNotifier extends StateNotifier<IsLoading> {
         thumbnailStorageId: thumbnailStorageId,
         originalFileStorageId: originalFileStorageId,
       );
-      await FirebaseFirestore.instance
-          .collection(FirebaseCollectionName.posts)
-          .add(postPayload);
+      await FirebaseFirestore.instance.collection(FirebaseCollectionName.posts).add(postPayload);
       return true;
     } catch (_) {
       return false;

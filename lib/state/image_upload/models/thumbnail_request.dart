@@ -1,7 +1,7 @@
 import 'dart:io' show File;
 
 import 'package:flutter/foundation.dart' show immutable;
-import 'package:testingriverpod/state/image_upload/models/file_type.dart';
+import 'package:instagram_clone/state/image_upload/models/file_type.dart';
 
 @immutable
 class ThumbnailRequest {
@@ -15,11 +15,7 @@ class ThumbnailRequest {
 
   @override
   bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is ThumbnailRequest &&
-          runtimeType == other.runtimeType &&
-          file == other.file &&
-          fileType == other.fileType;
+      identical(this, other) || other is ThumbnailRequest && runtimeType == other.runtimeType && file == other.file && fileType == other.fileType;
 
   @override
   int get hashCode => Object.hashAll(
