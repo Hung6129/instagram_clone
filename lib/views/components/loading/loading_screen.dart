@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/views/components/constants/strings.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 import 'loading_screen_controller.dart';
 
@@ -69,10 +68,7 @@ class LoadingScreen {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const SizedBox(height: 10),
-                      LoadingAnimationWidget.fourRotatingDots(
-                        color: Colors.blue,
-                        size: 50,
-                      ),
+                      const CircularProgressIndicator(),
                       const SizedBox(height: 20),
                       StreamBuilder(
                         stream: textController.stream,
