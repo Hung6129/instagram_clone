@@ -1,10 +1,12 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:instagram_clone/state/auth/providers/auth_state_provider.dart';
+
 import 'firebase_options.dart';
-import 'home/home_page.dart';
-import 'main/main_view.dart';
 import 'state/auth/providers/is_logged_in_provider.dart';
+import 'state/provider/is_loading_provider.dart';
+import 'views/components/loading/loading_screen.dart';
 import 'views/login/login_view.dart';
 
 void main() async {
@@ -14,13 +16,13 @@ void main() async {
   );
   runApp(
     const ProviderScope(
-      child: MyApp(),
+      child: App(),
     ),
   );
 }
 
-class MyApp extends ConsumerWidget {
-  const MyApp({
+class App extends ConsumerWidget {
+  const App({
     Key? key,
   }) : super(key: key);
 
@@ -41,24 +43,29 @@ class MyApp extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       home: Consumer(
         builder: (context, ref, child) {
-          // // install the loading screen
-          // ref.listen<bool>(
-          //   isLoadingProvider,
-          //   (_, isLoading) {
-          //     if (isLoading) {
-          //       LoadingScreen.instance().show(
-          //         context: context,
-          //       );
-          //     } else {
-          //       LoadingScreen.instance().hide();
-          //     }
-          //   },
-          // );
+          // install the loading screen
+          ref.listen<bool>(
+            isLoadingProvider,
+            (_, isLoading) {
+              if (isLoading) {
+                LoadingScreen.instance().show(
+                  context: context,
+                );
+              } else {
+                LoadingScreen.instance().hide();
+              }
+            },
+          );
           final isLoggedIn = ref.watch(isLoggedInProvider);
           if (isLoggedIn) {
-            return Text(isLoggedIn.toString());
+            return TextButton(
+              onPressed: () async {
+                await ref.read(authStateProvider.notifier).logOut();
+              },
+              child: Text("LogOut"),
+            );
           } else {
-            return const MyHomePage();
+            return const LoginView();
           }
         },
       ),

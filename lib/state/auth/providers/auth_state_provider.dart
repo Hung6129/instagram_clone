@@ -1,5 +1,8 @@
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:instagram_clone/state/auth/models/auth_state.dart';
-import 'package:instagram_clone/state/auth/notifiers/auth_state_notifiter.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart' show StateNotifierProvider;
 
-final authStateProvider = StateNotifierProvider<AuthStateNotifier, AuthState>((_) => AuthStateNotifier());
+import '../models/auth_state.dart';
+import '../notifiers/auth_state_notifiter.dart';
+
+final authStateProvider = StateNotifierProvider<AuthStateNotifier, AuthState>(
+  (ref) => AuthStateNotifier(),
+);
