@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:instagram_clone/main/main_view.dart';
 import 'package:instagram_clone/state/auth/providers/auth_state_provider.dart';
 import 'package:instagram_clone/views/components/animations/empty_contents_animation_view.dart';
 
@@ -59,17 +60,7 @@ class App extends ConsumerWidget {
           );
           final isLoggedIn = ref.watch(isLoggedInProvider);
           if (isLoggedIn) {
-            return Column(
-              children: [
-                const EmptyContentsAnimationView(),
-                TextButton(
-                  onPressed: () async {
-                    await ref.read(authStateProvider.notifier).logOut();
-                  },
-                  child: const Text("LogOut"),
-                ),
-              ],
-            );
+            return const MainView();
           } else {
             return const LoginView();
           }

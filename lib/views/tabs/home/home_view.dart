@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:instagram_clone/views/components/post/posts_grid_view.dart';
 import 'package:instagram_clone/views/constants/strings.dart';
 
 import '../../../state/posts/providers/all_posts_provider.dart';

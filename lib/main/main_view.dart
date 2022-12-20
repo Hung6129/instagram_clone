@@ -4,6 +4,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:instagram_clone/views/components/dialogs/alert_dialog_model.dart';
 
 import '../state/auth/providers/auth_state_provider.dart';
+import '../state/image_upload/helpers/image_picker_helper.dart';
+import '../state/image_upload/models/file_type.dart';
+import '../state/post_settings/providers/post_settings_provider.dart';
 import '../views/components/dialogs/logout_dialog.dart';
 import '../views/constants/strings.dart';
 import '../views/tabs/home/home_view.dart';
@@ -46,15 +49,15 @@ class _MainViewState extends ConsumerState<MainView> {
                 if (!mounted) {
                   return;
                 }
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => CreateNewPostView(
-                      fileType: FileType.video,
-                      fileToPost: videoFile,
-                    ),
-                  ),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (_) => CreateNewPostView(
+                //       fileType: FileType.video,
+                //       fileToPost: videoFile,
+                //     ),
+                //   ),
+                // );
               },
             ),
             IconButton(
@@ -72,15 +75,15 @@ class _MainViewState extends ConsumerState<MainView> {
                 if (!mounted) {
                   return;
                 }
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => CreateNewPostView(
-                      fileType: FileType.image,
-                      fileToPost: imageFile,
-                    ),
-                  ),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (_) => CreateNewPostView(
+                //       fileType: FileType.image,
+                //       fileToPost: imageFile,
+                //     ),
+                //   ),
+                // );
               },
               icon: const Icon(
                 Icons.add_photo_alternate_outlined,
