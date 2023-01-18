@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:instagram_clone/views/components/dialogs/alert_dialog_model.dart';
+import 'package:instagram_clone/views/create_new_post/create_new_post_view.dart';
 
 import '../state/auth/providers/auth_state_provider.dart';
 import '../state/image_upload/helpers/image_picker_helper.dart';
@@ -49,15 +50,15 @@ class _MainViewState extends ConsumerState<MainView> {
                 if (!mounted) {
                   return;
                 }
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (_) => CreateNewPostView(
-                //       fileType: FileType.video,
-                //       fileToPost: videoFile,
-                //     ),
-                //   ),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => CreateNewPostView(
+                      fileType: FileType.video,
+                      fileToPost: videoFile,
+                    ),
+                  ),
+                );
               },
             ),
             IconButton(
@@ -75,15 +76,15 @@ class _MainViewState extends ConsumerState<MainView> {
                 if (!mounted) {
                   return;
                 }
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (_) => CreateNewPostView(
-                //       fileType: FileType.image,
-                //       fileToPost: imageFile,
-                //     ),
-                //   ),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => CreateNewPostView(
+                      fileType: FileType.image,
+                      fileToPost: imageFile,
+                    ),
+                  ),
+                );
               },
               icon: const Icon(
                 Icons.add_photo_alternate_outlined,
